@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-car-adds></app-car-adds>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let extra of adds"
+      >
+          {{ extra.name }}  {{ extra.amount }} 
+      </a>
+    </ul>
+  </div>
+</div>

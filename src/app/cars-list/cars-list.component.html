@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-5">
+        <app-cars-central></app-cars-central>
+    </div>
+    <div class="col-xs-7">
+        <app-car-detail
+        *ngIf="selectedCar; else info"
+        [car]="selectedCar">
+        </app-car-detail>
+        <ng-template #info>
+            <p>No car was Selected yet!</p>
+        </ng-template>
+    </div>
+</div>
+

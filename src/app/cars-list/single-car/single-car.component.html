@@ -1,0 +1,17 @@
+<a href="#" 
+(click)="onSelect()"
+class="list-group-item clearfix"
+click="onPickCar()">
+<div class="pull-left">
+  <h1 class="list-group-item-heading">{{ car.brand }}</h1>
+  <p class="list-group-item-text">Horse Power: {{car.hp}}</p>
+  <p class="list-group-item-text">Price of the car: {{car.price}}$</p>
+</div>
+  <span class="pull-right">
+    <img [src]="car.picture"
+     alt="{{car.brand}}"
+     class="img-responsive"
+     style="max-height: 250px">
+  </span>
+</a>
+

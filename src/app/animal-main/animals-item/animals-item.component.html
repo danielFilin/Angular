@@ -1,0 +1,18 @@
+<a
+  href="#"
+  (click)="onSelect()"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h3 class="list-group-item-heading">{{ singleAnimal.specie }}</h3>
+    <p class="list-group-item-text">{{ singleAnimal.family }}</p>
+    <p class="list-group-item-text">{{ singleAnimal.size }}</p>
+  </div>
+  <span class="pull-right">
+        <img
+          [src]="singleAnimal.picture"
+          alt="{{ singleAnimal.picture }}"
+          class="img-responsive"
+          style="max-height: 150px;">
+      </span>
+</a>
+

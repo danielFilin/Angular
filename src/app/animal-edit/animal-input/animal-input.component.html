@@ -1,0 +1,18 @@
+<div class="col">
+  <div class="col-xs-12">
+  <h1>Add new Animal to the List!</h1>
+  <br>
+  <br>
+  <h3>Insert Specie name</h3>
+  <input type="text" class="form-control" #specie>
+  <h3>Insert the family of the animal</h3>
+  <input type="text" class="form-control" #family>
+  <h3>What size is that animal</h3>
+  <input type="text" class="form-control" #size>
+  <h3>How big is the population of this animal?</h3>
+  <input type="text" class="form-control" #population>
+  <h3>Add a great picture of the animal!</h3>
+  <input type="text" class="form-control" #picture>
+  <button class="btn btn-primary" (click)="onAddAnimal(specie, family, size, population, picture)">Add new Animal</button>
+  </div>
+</div>

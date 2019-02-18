@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="car.picture"
+      alt="{{ car.brand }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ car.brand }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Manage Car <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToCarsList()" style="cursor: pointer;">To Shopping List</a></li>
+        <li><a href="#">Edit Car</a></li>
+        <li><a href="#">Delete Car</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+   Car price is: {{ car.price }}$ It has {{car.hp}} Horse Powers!
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Extra Features!</h3>
+    <ul>
+      <li class="list-group-item"
+      *ngFor = "let extra of car.adds">
+      {{extra.name}} - {{extra.amount}}
+      {{extra.picture}}
+      </li>
+    </ul>
+  </div>
+</div>
+

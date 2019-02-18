@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-12">
+      <img
+        [src]="animal.picture"
+        alt="{{ animal.name }}"
+        class="img-responsive"
+        style="max-height: 300px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ animal.specie }}</h1>
+    </div>
+      <h4> The average size of {{animal.specie}} is {{animal.size}}. The population of this animal is {{animal.population}}  </h4>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        class="btn-group"
+        appDropdown>
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle">
+          Manage Animal <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
+          <li><a href="#">Edit Animal</a></li>
+          <li><a href="#">Delete Animal</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      {{ animal.family }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <!-- <li
+          class="list-group-item"
+          *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li> -->
+      </ul>
+    </div>
+  </div>
+  
