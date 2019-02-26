@@ -6,7 +6,8 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let extra of adds"
+        *ngFor="let extra of adds; let i = index"
+        (click)="onEditCar(i)"
       >
           {{ extra.name }}  {{ extra.amount }} 
       </a>

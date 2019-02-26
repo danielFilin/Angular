@@ -3,11 +3,6 @@
     <app-animals-list></app-animals-list>
   </div>
   <div class="col-md-7">
-    <app-animals-detail
-    *ngIf = "selectedAnimal; else message"
-    [animal]="selectedAnimal"></app-animals-detail>
-    <ng-template #message>
-      <p>Pick the Animal of Your choice!</p>
-    </ng-template>
+      <router-outlet></router-outlet>
   </div>
 </div>

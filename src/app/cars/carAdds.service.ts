@@ -1,10 +1,10 @@
 import { CarAdds } from "../shared/car-adds.model";
-import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 
 
 export class carAddsService{
-    addsChanged = new EventEmitter<CarAdds[]>();
-
+    addsChanged = new Subject<CarAdds[]>();
+    editedCarIndex = new Subject<number>();
 
     private carAdds: CarAdds[] = [
         new CarAdds("Extra set of wheels",
@@ -17,15 +17,29 @@ export class carAddsService{
     getAdds(){
         return this.carAdds.slice();
     }
+    
+    getSingleAdd(index: number){
+        return this.carAdds[index];
+    }
 
-    addnewExtra(carAdds: CarAdds){
-        this.carAdds.push(carAdds);
-        this.addsChanged.emit(this.carAdds.slice());
+    addnewExtra(newExtra: CarAdds){
+        this.carAdds.push(newExtra);
+        this.addsChanged.next(this.carAdds.slice());
     }
 
     addExtraFeatures(carAdds: CarAdds[]){
       this.carAdds.push(...carAdds);
-        this.addsChanged.emit(this.carAdds.slice());
+        this.addsChanged.next(this.carAdds.slice());
+    }
+
+    addUpdated(index: number, newAdd: CarAdds){
+        this.carAdds[index] = newAdd;
+        this.addsChanged.next(this.carAdds.slice());
+    }
+
+    deleteItem(index: number) {
+        this.carAdds.splice(index,1);
+        this.addsChanged.next(this.carAdds.slice());
     }
 
 }

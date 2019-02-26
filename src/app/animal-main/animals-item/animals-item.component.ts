@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Animal } from '../animals.model';
-import { AnimalsService } from '../animals.service';
+
 
 @Component({
   selector: 'app-animals-item',
@@ -9,13 +9,11 @@ import { AnimalsService } from '../animals.service';
 })
 export class AnimalsItemComponent implements OnInit {
  @Input() singleAnimal : Animal;
-  constructor(private animalsService: AnimalsService) { }
+ @Input() id: number;
 
   ngOnInit() {
   }
 
-  onSelect(){
-    this.animalsService.selectedAnimal.emit(this.singleAnimal);
-  }
+
 
 }

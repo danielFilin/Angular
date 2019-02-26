@@ -12,7 +12,15 @@ cars: Car[];
   constructor(private carService: CarService) { }
 
   ngOnInit() {
+    this.carService.selectedCar
+.subscribe(
+  (car: Car[]) => {
+    this.cars = car;
+  }
+);
     this.cars = this.carService.getCars();
   }
 
 }
+
+

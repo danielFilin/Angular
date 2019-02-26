@@ -24,8 +24,8 @@
       </button>
       <ul class="dropdown-menu">
         <li><a (click)="onAddToCarsList()" style="cursor: pointer;">To Shopping List</a></li>
-        <li><a href="#">Edit Car</a></li>
-        <li><a href="#">Delete Car</a></li>
+        <li><a style="cursor: pointer;" (click)="toEditMode()">Edit Car</a></li>
+        <li><a style="cursor: pointer;" (click)="onDelete()">Delete Car</a></li>
       </ul>
     </div>
   </div>

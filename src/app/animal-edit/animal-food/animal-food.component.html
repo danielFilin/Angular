@@ -1,0 +1,37 @@
+<div class="row">
+  <h3>The food animals need!</h3>
+  <form (ngSubmit)="toCart(f)" #f="ngForm">
+  <div class="col-md-5">
+  
+        <span>Insert name of Food</span>
+        <input type="text"
+         class="form-control"
+          name="food"
+          ngModel
+          required>
+      </div>
+      <div class="col-md-3">
+          <span>Insert amount</span>
+          <input
+           type="number"
+            class="form-control" 
+            name="amount"
+            ngModel
+            required
+            pattern ="^[1-9]+[0+9]*$">
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit" [disabled]="!f.valid" > {{editMode? 'Update': 'Add'}}  </button>
+        <button class="btn btn-danger" (click)="delete()">Delete</button>
+        <button class="btn btn-danger" (clear)="onClear()">Clear </button>
+    </form>
+   
+    <br>
+    <h4>Name and amount</h4>
+    <a class="list-group-item"
+    *ngFor="let item of foodItems; let i =index"
+    (click)="editAnimal(i)">
+        
+            <p>{{item.name}} {{item.amount}}</p>
+  </a>
+</div>

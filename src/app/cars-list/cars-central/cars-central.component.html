@@ -2,8 +2,9 @@
 <div class="row">
   <div class="col-xs-9">
       <app-single-car 
-      *ngFor="let singleCar of cars"
+      *ngFor="let singleCar of cars; let i = index"
       [car]="singleCar"
+      [index] = "i"
       class="pull-right">
       </app-single-car>
   </div>

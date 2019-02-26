@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from './cars.service';
 import { Car } from '../shared/car.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars-list',
@@ -9,15 +10,14 @@ import { Car } from '../shared/car.model';
 })
 export class CarsListComponent implements OnInit {
  selectedCar: Car;
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-   this.carService.selectedCar
-   .subscribe(
-     (car: Car) => {
-       this.selectedCar = car;
-     }
-   );
+  
+  }
+
+  onAddNew(){
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

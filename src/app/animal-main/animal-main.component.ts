@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalsService } from './animals.service';
+
 import { Animal } from './animals.model';
 
 @Component({
@@ -8,18 +8,11 @@ import { Animal } from './animals.model';
   styleUrls: ['./animal-main.component.css']
 })
 export class AnimalMainComponent implements OnInit {
-selectedAnimal: Animal;
 
-  constructor(private animalsService: AnimalsService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.animalsService.selectedAnimal
-    .subscribe(
-      (animal: Animal) => {
-        this.selectedAnimal = animal; 
-      }
-    )
-
+   
   }
 
 }

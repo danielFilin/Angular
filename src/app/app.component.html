@@ -1,17 +1,9 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
+<app-header ></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedFeature === 'recipe'"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
-    <div class="col-md-12">
-      <app-cars *ngIf="loadedFeature === 'cars'"></app-cars>
-      <app-cars-list *ngIf="loadedFeature === 'cars-list'"></app-cars-list>
-    </div>
-    <div class="col-md-12">
-        <app-animal-main *ngIf="loadedFeature === 'animals'"></app-animal-main>
-        <app-animal-edit *ngIf="loadedFeature === 'edit-animals'"></app-animal-edit>
     </div>
   </div>
-</div>
+

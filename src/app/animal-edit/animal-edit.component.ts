@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-animal-edit',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animal-edit.component.css']
 })
 export class AnimalEditComponent implements OnInit {
+  id: number;
+  editMode = false; 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params
+    .subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        console.log(params);
+        this.editMode = this.id != null; 
+      }
+    )
   }
 
 }

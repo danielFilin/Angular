@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Car } from 'src/app/shared/car.model';
-import { CarService } from '../cars.service';
+
 
 @Component({
   selector: 'app-single-car',
@@ -9,13 +9,11 @@ import { CarService } from '../cars.service';
 })
 export class SingleCarComponent implements OnInit {
 @Input() car: Car;
-  constructor(private carService: CarService) { }
+@Input() index: number; 
+ 
 
   ngOnInit() {
   }
 
-  onSelect(){
-  this.carService.selectedCar.emit(this.car);
-  }
 
 }

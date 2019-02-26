@@ -24,9 +24,9 @@
           Manage Animal <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-          <li><a href="#">Edit Animal</a></li>
-          <li><a href="#">Delete Animal</a></li>
+          <li><a (click)="toFoodList()" style="cursor: pointer;">To Shopping List</a></li>
+          <li><a style="cursor: pointer;" (click)="toEditMode()">Edit Animal</a></li>
+          <li><a style="cursor: pointer;" (click)="onDelete()">Delete Animal</a></li>
         </ul>
       </div>
     </div>
@@ -39,11 +39,11 @@
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
-        <!-- <li
+        <li
           class="list-group-item"
-          *ngFor="let ingredient of recipe.ingredients">
-          {{ ingredient.name }} - {{ ingredient.amount }}
-        </li> -->
+          *ngFor="let foodPeace of animal.food">
+          {{ foodPeace.name }} - {{ foodPeace.amount }}
+        </li>
       </ul>
     </div>
   </div>
