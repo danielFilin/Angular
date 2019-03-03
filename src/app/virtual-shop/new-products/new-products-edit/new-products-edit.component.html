@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>{{mode}}</h3>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div id="user-data"
+      ngModelGroup="userData"
+      #userData="ngModelGroup"
+      >
+     
+          <h3 style="text-align: center">Insert new Product here</h3>
+          <div class="form-group">
+              <span class="badge badge-secondary">New Product Name</span>
+              <input type="text"
+              class="form-control"
+              id="name"
+              ngModel
+              name="name"
+              required>
+            </div>
+          <div class="form-group">
+              <span class="badge badge-secondary">New Product Description</span>
+              <input type="text"
+              class="form-control"
+              id="description"
+              ngModel
+              name="description"
+              required>
+          </div>
+          <div class="form-group">
+              <span class="badge badge-secondary">New Product picture</span>
+              <input type="text"
+              class="form-control"
+              ngModel
+              name="picture"
+              required>
+          </div>
+          <div class="from-group">
+              <span class="badge badge-secondary">New Product Price</span>
+              <input type="number"
+              class="form-control"
+              ngModel
+              name="price"
+              required>
+              <div style="height: 50px;"></div>
+          </div>
+      </div>
+    <button class="btn btn-primary" [disabled]="!f.valid" style="margin-right: 10px">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="onClear()">Clear Form</button>
+    </form>
+  </div>
+</div>

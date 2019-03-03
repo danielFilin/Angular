@@ -15,3 +15,9 @@
         color: darkblue;
         border-radius: 0.3rem;
     }
+
+    .secondary-header:hover{
+        color: yellow;
+        background-color: green;
+        border-radius: 0.6rem;
+    }

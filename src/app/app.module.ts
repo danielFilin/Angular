@@ -41,6 +41,24 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { RecipeService } from './recipes/recipe.service';
 import { VirtualShopComponent } from './virtual-shop/virtual-shop.component';
+import { NewProductsComponent } from './virtual-shop/new-products/new-products.component';
+import { BestOffersComponent } from './virtual-shop/best-offers/best-offers.component';
+import { NewsComponent } from './virtual-shop/news/news.component';
+import { NewProductsListComponent } from './virtual-shop/new-products/new-products-list/new-products-list.component';
+import { NewProductsItemComponent } from './virtual-shop/new-products/new-products-item/new-products-item.component';
+import { NewProductsEditComponent } from './virtual-shop/new-products/new-products-edit/new-products-edit.component';
+import { ProductsService } from './virtual-shop/new-products/products.service';
+import { ProductDetailsComponent } from './virtual-shop/new-products/product-details/product-details.component';
+import { ShoppingCartComponent } from './virtual-shop/shopping-cart/shopping-cart.component';
+import { BestOffersListComponent } from './virtual-shop/best-offers/best-offers-list/best-offers-list.component';
+import { BestOffersSingleComponent } from './virtual-shop/best-offers/best-offers-single/best-offers-single.component';
+import { BestOffersService } from './virtual-shop/best-offers/bestOffers.service';
+import { AddOfferFormComponent } from './virtual-shop/best-offers/add-offer-form/add-offer-form.component';
+import { HttpComponent } from './http/http.component';
+import { ServersService } from './http/servers.service';
+import { DataStorageService } from './shared/data-storage.service';
+
+
 
 
 
@@ -77,6 +95,21 @@ import { VirtualShopComponent } from './virtual-shop/virtual-shop.component';
     FormComponent,
     ReactiveFormComponent,
     VirtualShopComponent,
+    NewProductsComponent,
+    BestOffersComponent,
+    NewsComponent,
+    NewProductsListComponent,
+    NewProductsItemComponent,
+    NewProductsEditComponent,
+    ProductDetailsComponent,
+    ShoppingCartComponent,
+    BestOffersListComponent,
+    BestOffersSingleComponent,
+    AddOfferFormComponent,
+    HttpComponent,
+
+
+
     
 
   ],
@@ -87,7 +120,7 @@ import { VirtualShopComponent } from './virtual-shop/virtual-shop.component';
     AppRoutingModule, 
     ReactiveFormsModule
   ],
-  providers: [ShoppingListService, CarService, carAddsService, AnimalsService, AnimalFood, RecipeService],
+  providers: [ShoppingListService, CarService, carAddsService, AnimalsService, AnimalFood, RecipeService, ProductsService, BestOffersService, ServersService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

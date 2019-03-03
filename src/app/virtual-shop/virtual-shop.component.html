@@ -5,7 +5,10 @@
       <div class="col-xs-12">
         <div class="row"></div>
           <div class="col-sm-4">
-          <h3 class="secondary-header">Check our new Products!</h3>
+          <h3  style="cursor: pointer" 
+          class="secondary-header"
+          routerLink="new-products"
+          >Check our new Products!</h3>
           <p class="header-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, distinctio placeat! Laudantium illum, voluptas est omnis, natus beatae quasi labore recusandae optio nesciunt distinctio consectetur error accusamus, incidunt laborum eius?
           Alias labore esse mollitia quisquam corporis, quasi voluptatibus nesciunt molestias adipisci ut aut ea architecto, soluta quia omnis. Omnis, consequatur. Voluptas officiis blanditiis quisquam rem possimus ducimus nihil omnis in!
           Itaque, laboriosam officia omnis fugit quo velit quaerat consectetur magnam accusantium nostrum rem eum eius est sit expedita eaque, id adipisci iusto voluptatem. Id, reprehenderit? Animi quis iusto tempora illo?</p>
@@ -13,7 +16,8 @@
   
    
             <div class="col-sm-4">
-            <h3 class="secondary-header">Check our Best offers!</h3>
+              
+            <h3 style="cursor: pointer" class="secondary-header" routerLink="best-offers">Check our Best offers!</h3>
             <p class="header-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, distinctio placeat! Laudantium illum, voluptas est omnis, natus beatae quasi labore recusandae optio nesciunt distinctio consectetur error accusamus, incidunt laborum eius?
                 Alias labore esse mollitia quisquam corporis, quasi voluptatibus nesciunt molestias adipisci ut aut ea architecto, soluta quia omnis. Omnis, consequatur. Voluptas officiis blanditiis quisquam rem possimus ducimus nihil omnis in!
                 Itaque, laboriosam officia omnis fugit quo velit quaerat consectetur magnam accusantium nostrum rem eum eius est sit expedita eaque, id adipisci iusto voluptatem. Id, reprehenderit? Animi quis iusto tempora illo?</p>
@@ -21,11 +25,21 @@
      
     
           <div class="col-sm-4">
-          <h3 class="secondary-header">More exiting news!</h3>
+          <h3  style="cursor: pointer" 
+          class="secondary-header"
+          routerLink="news"
+          >More exiting news!</h3>
           <p class="header-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, distinctio placeat! Laudantium illum, voluptas est omnis, natus beatae quasi labore recusandae optio nesciunt distinctio consectetur error accusamus, incidunt laborum eius?
               Alias labore esse mollitia quisquam corporis, quasi voluptatibus nesciunt molestias adipisci ut aut ea architecto, soluta quia omnis. Omnis, consequatur. Voluptas officiis blanditiis quisquam rem possimus ducimus nihil omnis in!
               Itaque, laboriosam officia omnis fugit quo velit quaerat consectetur magnam accusantium nostrum rem eum eius est sit expedita eaque, id adipisci iusto voluptatem. Id, reprehenderit? Animi quis iusto tempora illo?</p>
         </div>
+      </div>
+    </div>
+    <button class="btn btn-default" (click)="onNavigate()">Navigate</button>
+    <div style="height: 200px;"></div>
+    <div class="row">
+      <div class="col-xs-12">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

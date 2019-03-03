@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-virtual-shop',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VirtualShopComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onNavigate(){
+    this.router.navigate(['new-products-edit', 'edit'], {relativeTo: this.route})
   }
 
 }

@@ -1,0 +1,19 @@
+
+<div class="row">
+  <div class="col-md-7">
+      <div class="card" style="width: 28rem">
+          <div class="card-header">
+            <h3> {{product.name}} </h3>
+          </div>
+          <img style="cursor: pointer" class="img-responsive" [src]="product.picture" alt="{{product.picture}}" (click)="showDetails()">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{product.description}}</li>
+            <li class="list-group-item">{{product.price}}$</li>
+          </ul>
+        </div>
+        <div class="col-md-5">
+        </div>
+  </div>
+</div>
+
+

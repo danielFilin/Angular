@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Shopping Cart</h3>
+    <p *ngFor="let item of items; let i = index"> {{i+1}}: Item Name: {{item.name}}: {{amount}} {{item.price}} </p>
+    <p> {{totalPrice}} </p>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h4>best-offers-list works!</h4>
+    <div class="row">
+      <div class="col-xs-12">
+        <app-best-offers-single 
+        *ngFor= "let offer of bestOffers; let i = index"
+        [newOffer]="offer"
+        [index]="i">
+        </app-best-offers-single>
+      </div>
+      <br>
+      <button class="btn btn-success" id="button" (click)="addNew()">Add new Offer</button>
+    </div>
+  </div>
+</div>
+ 

@@ -17,6 +17,20 @@ import { FormComponent } from "./form/form.component";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 import { CarEditComponent } from "./cars/car-edit/car-edit.component";
 import { VirtualShopComponent } from "./virtual-shop/virtual-shop.component";
+import { NewsComponent } from "./virtual-shop/news/news.component";
+import { BestOffersComponent } from "./virtual-shop/best-offers/best-offers.component";
+import { NewProductsComponent } from "./virtual-shop/new-products/new-products.component";
+import { NewProductsEditComponent } from "./virtual-shop/new-products/new-products-edit/new-products-edit.component";
+
+import { NewProductsItemComponent } from "./virtual-shop/new-products/new-products-item/new-products-item.component";
+import { ProductDetailsComponent } from "./virtual-shop/new-products/product-details/product-details.component";
+import { NewProductsListComponent } from "./virtual-shop/new-products/new-products-list/new-products-list.component";
+import { ShoppingCartComponent } from "./virtual-shop/shopping-cart/shopping-cart.component";
+import { AddOfferFormComponent } from "./virtual-shop/best-offers/add-offer-form/add-offer-form.component";
+import { HttpComponent } from "./http/http.component";
+
+
+
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -45,7 +59,21 @@ const appRoutes: Routes = [
     ]},
     {path: 'form', component: FormComponent}, 
     {path: 'reactive-form', component: ReactiveFormComponent},
-    {path: 'virtual-shop', component: VirtualShopComponent}
+    {path: 'virtual-shop/new-products', component: NewProductsComponent, children: [
+        {path: ':id', component: ProductDetailsComponent}
+    ]},
+    {path: 'virtual-shop/new-products-item', component: NewProductsItemComponent}, 
+    {path: 'virtual-shop', component: VirtualShopComponent, children: [
+        {path: 'news', component: NewsComponent},
+        {path: 'new-products-edit/:id', component: NewProductsEditComponent},
+        {path: 'new-products-edit/edit', component: NewProductsEditComponent},
+        {path: 'shopping-cart', component: ShoppingCartComponent}
+        
+    ]},
+    {path: 'virtual-shop/best-offers', component: BestOffersComponent},
+    {path: 'virtual-shop/new-products-list/', component: NewProductsListComponent},{path: 'virtual-shop/best-offers/add-offer-form', component: AddOfferFormComponent},
+    {path: 'http', component: HttpComponent}
+
 ]
 
 @NgModule({
