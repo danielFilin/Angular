@@ -12,6 +12,10 @@ export class ProductsService{
 
     shoppingCart: Product[] = [];
 
+    setProducts(products: Product[]){
+        this.products = products;
+        this.productsChanged.next(this.products);
+    }
 
     getProducts(){
         return this.products;

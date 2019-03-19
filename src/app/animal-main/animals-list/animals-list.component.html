@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success" (click)="addAnimal()">Add Animal</button>
+    <div class="btn-group">
+        <button class="btn btn-success" (click)="addAnimal()">Add Animal</button>
+        <button class="btn btn-info" (click)="sendToServer()">Store in Server</button>
+        <button class="btn btn-dark" (click)="fetchFromServer()">Fetch From Server</button>
+    </div>
+   
     <app-animals-item *ngFor = "let animal of animals; let i = index"
     [singleAnimal]="animal"
     [id]="i"></app-animals-item>

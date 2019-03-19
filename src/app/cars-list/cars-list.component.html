@@ -1,9 +1,14 @@
 <div class="row">
-    <div class="col-xs-5">
-        <button class="btn btn-success" (click)="onAddNew()">Add New Car</button>
+    <div class="col-xs-7">
+        <div class="btn-group">
+        <button style="margin-right: 5px" class="btn btn-success" (click)="onAddNew()">Add New Car</button>
+        <button style="margin-right: 5px" class="btn btn-info" (click)="onSave()">Save in Server</button>
+        <button class="btn btn-dark" (click)="onSave" (click)="onFetch()">Fetch from Server</button>
+        </div>
+        
         <app-cars-central></app-cars-central>
     </div>
-    <div class="col-xs-7">
+    <div class="col-xs-5">
         <router-outlet></router-outlet>
     </div>
 </div>

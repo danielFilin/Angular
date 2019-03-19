@@ -26,6 +26,11 @@ export class AnimalsService {
 
       constructor(private animalFood: AnimalFood) {}
 
+    setAnimals(animals: Animal[]){
+        this.animals = animals;
+        this.animalsChanged.next(this.animals.slice());
+    }
+
     getAnimals(){
         return this.animals.slice();
     }

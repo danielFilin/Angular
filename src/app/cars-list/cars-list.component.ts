@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from './cars.service';
 import { Car } from '../shared/car.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataStorageService } from '../shared/data-storage.service';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-cars-list',
@@ -10,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CarsListComponent implements OnInit {
  selectedCar: Car;
-  constructor(private carService: CarService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private carService: CarService, private route: ActivatedRoute, private router: Router, private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
   
@@ -18,6 +20,19 @@ export class CarsListComponent implements OnInit {
 
   onAddNew(){
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  onSave(){
+    this.dataStorageService.storeRecipes('https://training-project-a5eab.firebaseio.com/Cars.json', this.carService.getCars())
+    .subscribe(
+      (response: Response) => {
+        console.log(response);
+      }
+    )
+  }
+
+  onFetch(){
+    this.dataStorageService.getCarsfromServer();
   }
 
 }

@@ -2,6 +2,8 @@
 <div class="row">
   <div class="col-xs-12">
     <h2>List of all Products!</h2>
+    <button class="btn btn-primary" (click)="toServer()">Save to Server</button>
+    <button class="btn btn-default" (click)="fetchFromServer()">Get From Server</button>
     <app-new-products-item
     *ngFor = "let productEl of products; let i = index"
     [product] = "productEl"

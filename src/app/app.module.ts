@@ -2,16 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { CarsComponent } from './cars/cars.component';
 import { CarsListComponent } from './cars-list/cars-list.component';
@@ -32,9 +24,8 @@ import { AnimalFoodComponent } from './animal-edit/animal-food/animal-food.compo
 import { FoodListComponent } from './animal-edit/food-list/food-list.component';
 import { AnimalFood } from './animal-edit/food-list/AnimalFood.service';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+
 import { AnimalStartComponent } from './animal-main/animal-start/animal-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { CarStartComponent } from './cars-list/car-start/car-start.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { FormComponent } from './form/form.component';
@@ -57,22 +48,18 @@ import { AddOfferFormComponent } from './virtual-shop/best-offers/add-offer-form
 import { HttpComponent } from './http/http.component';
 import { ServersService } from './http/servers.service';
 import { DataStorageService } from './shared/data-storage.service';
-
-
-
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { SharedModule } from './shared/shared.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
     CarsComponent,
     CarsListComponent,
     SingleCarComponent,
@@ -87,9 +74,7 @@ import { DataStorageService } from './shared/data-storage.service';
     AnimalInputComponent,
     AnimalFoodComponent,
     FoodListComponent,
-    RecipeStartComponent,
     AnimalStartComponent,
-    RecipeEditComponent,
     CarStartComponent,
     CarEditComponent,
     FormComponent,
@@ -107,10 +92,7 @@ import { DataStorageService } from './shared/data-storage.service';
     BestOffersSingleComponent,
     AddOfferFormComponent,
     HttpComponent,
-
-
-
-    
+    HomeComponent,
 
   ],
   imports: [
@@ -118,9 +100,12 @@ import { DataStorageService } from './shared/data-storage.service';
     FormsModule,
     HttpModule,
     AppRoutingModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    ShoppingListModule,
+    AuthModule
   ],
-  providers: [ShoppingListService, CarService, carAddsService, AnimalsService, AnimalFood, RecipeService, ProductsService, BestOffersService, ServersService, DataStorageService],
+  providers: [ShoppingListService, CarService, carAddsService, AnimalsService, AnimalFood, RecipeService, ProductsService, BestOffersService, ServersService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
