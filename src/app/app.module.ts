@@ -6,11 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { CarsComponent } from './cars/cars.component';
-import { CarsListComponent } from './cars-list/cars-list.component';
-import { SingleCarComponent } from './cars-list/single-car/single-car.component';
 import { CarService } from './cars-list/cars.service';
-import { CarDetailComponent } from './cars-list/car-detail/car-detail.component';
-import { CarsCentralComponent } from './cars-list/cars-central/cars-central.component';
 import { carAddsService } from './cars/carAdds.service';
 import { CarAddsComponent } from './cars/car-adds/car-adds.component';
 import { AnimalsDetailComponent } from './animal-main/animals-detail/animals-detail.component';
@@ -26,7 +22,6 @@ import { AnimalFood } from './animal-edit/food-list/AnimalFood.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AnimalStartComponent } from './animal-main/animal-start/animal-start.component';
-import { CarStartComponent } from './cars-list/car-start/car-start.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
@@ -54,6 +49,8 @@ import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
+import { CarsModule } from './cars-list/car.module';
+import { CarDetailComponent } from './cars-list/car-detail/car-detail.component';
 
 
 @NgModule({
@@ -61,10 +58,6 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     HeaderComponent,
     CarsComponent,
-    CarsListComponent,
-    SingleCarComponent,
-    CarDetailComponent,
-    CarsCentralComponent,
     CarAddsComponent,
     AnimalsDetailComponent,
     AnimalsItemComponent,
@@ -75,7 +68,6 @@ import { HomeComponent } from './home/home.component';
     AnimalFoodComponent,
     FoodListComponent,
     AnimalStartComponent,
-    CarStartComponent,
     CarEditComponent,
     FormComponent,
     ReactiveFormComponent,
@@ -93,6 +85,7 @@ import { HomeComponent } from './home/home.component';
     AddOfferFormComponent,
     HttpComponent,
     HomeComponent,
+    CarDetailComponent
 
   ],
   imports: [
@@ -103,7 +96,8 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     SharedModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    CarsModule
   ],
   providers: [ShoppingListService, CarService, carAddsService, AnimalsService, AnimalFood, RecipeService, ProductsService, BestOffersService, ServersService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

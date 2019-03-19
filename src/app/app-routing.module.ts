@@ -34,12 +34,7 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
     { path: 'shopping-list', component: ShoppingListComponent },
-    { path: 'cars-list', component: CarsListComponent, children: [
-        { path: '', component: CarStartComponent},
-        { path: 'new', component: CarEditComponent, canActivate: [AuthGuard]},
-        { path: ':id', component: CarDetailComponent},
-        { path: ':id/edit', component: CarEditComponent, canActivate: [AuthGuard]}
-    ]},
+    
     { path: 'cars', component: CarsComponent},
     { path: 'animals-edit', component: AnimalEditComponent, canActivate: [AuthGuard]},
     { path: 'animals-main', component: AnimalMainComponent , children: [
